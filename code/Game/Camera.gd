@@ -22,15 +22,15 @@ func movement_loop():
 	var diry = int(down) - int(up)
 	
 	if dirx == -1 :
-		vel.x = max(vel.x - 500, -5000)
+		vel.x = max(vel.x - 1000, -10000)
 	elif dirx == 1 :
-		vel.x = min(vel.x + 500, 5000)
+		vel.x = min(vel.x + 1000, 10000)
 	else:
 		vel.x = lerp(vel.x, 0, 1)
 	
 	if diry == -1 :
-		vel.y = max(vel.y - 500, -5000)
+		vel.y = max(vel.y - 1000, -10000)
 	elif diry == 1 :
-		vel.y = min(vel.y + 500, 5000)
+		vel.y = min(vel.y + 1000, 10000)
 	else:
 		vel.y = lerp(vel.y, 0, 1)

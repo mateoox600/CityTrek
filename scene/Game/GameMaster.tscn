@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://code/Game/GameMaster/init.gd" type="Script" id=1]
 [ext_resource path="res://img/tiles/TilemapSol.png" type="Texture" id=2]
 [ext_resource path="res://code/Game/Camera.gd" type="Script" id=3]
-[ext_resource path="res://fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scene/Game/canvas/HUD.tscn" type="PackedScene" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilemapSol.png 0"
@@ -72,14 +72,6 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 5120, 3072 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 500
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 500
-font_data = ExtResource( 4 )
-
 [node name="GameMaster" type="Node2D"]
 position = Vector2( 5120, 3072 )
 script = ExtResource( 1 )
@@ -109,52 +101,12 @@ disabled = true
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 current = true
 zoom = Vector2( 10, 10 )
+limit_left = 0
+limit_top = 0
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 smoothing_speed = 8.0
 
-[node name="Pop" type="Label" parent="Camera"]
-margin_left = -4864.0
-margin_top = -2816.0
-margin_right = -4578.0
-margin_bottom = -2134.0
-custom_fonts/font = SubResource( 4 )
-text = "0 / 0"
-
-[node name="Money" type="Label" parent="Camera"]
-margin_left = 1792.0
-margin_top = -2816.0
-margin_right = 2078.0
-margin_bottom = -2134.0
-custom_fonts/font = SubResource( 5 )
-text = "0"
-align = 2
-valign = 1
-
-[node name="Pierre" type="Label" parent="Camera"]
-margin_left = 1792.0
-margin_top = -2134.0
-margin_right = 2078.0
-margin_bottom = -1452.0
-custom_fonts/font = SubResource( 5 )
-text = "0"
-align = 2
-valign = 1
-
-[node name="Bois" type="Label" parent="Camera"]
-margin_left = 1792.0
-margin_top = -1452.0
-margin_right = 2078.0
-margin_bottom = -770.0
-custom_fonts/font = SubResource( 5 )
-text = "0"
-align = 2
-valign = 1
-
-[node name="Selection" type="Sprite" parent="Camera"]
-position = Vector2( -1792, -2048 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 2 )
-vframes = 2
-hframes = 3
+[node name="HUD" parent="Camera" instance=ExtResource( 4 )]
+position = Vector2( -2304, -1024 )
 
