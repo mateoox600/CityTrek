@@ -9,119 +9,169 @@
 
 [node name="HUD" type="Node2D"]
 
-[node name="Values" type="HBoxContainer" parent="."]
-margin_left = 1284.0
-margin_top = 256.0
-margin_right = 3174.0
-margin_bottom = 938.0
-
-[node name="Selection" type="MarginContainer" parent="Values"]
+[node name="HUD" type="HBoxContainer" parent="."]
+margin_left = 2816.0
+margin_right = 5930.0
 margin_bottom = 682.0
 
-[node name="Selection" type="Sprite" parent="Values/Selection"]
-position = Vector2( -768, 256 )
+[node name="Selection" type="MarginContainer" parent="HUD"]
+margin_bottom = 682.0
+
+[node name="Selection" type="Sprite" parent="HUD/Selection"]
+position = Vector2( -2048, 761 )
 scale = Vector2( 4.125, 4.125 )
 texture = ExtResource( 1 )
 vframes = 2
 hframes = 3
 
-[node name="Pop" type="MarginContainer" parent="Values"]
+[node name="Values" type="HBoxContainer" parent="HUD"]
 margin_left = 4.0
-margin_right = 874.0
+margin_right = 16.0
 margin_bottom = 682.0
 
-[node name="Pop" type="HBoxContainer" parent="Values/Pop"]
-margin_right = 870.0
+[node name="Pop" type="Control" parent="HUD/Values"]
 margin_bottom = 682.0
+size_flags_horizontal = 2
 
-[node name="PopTexture" type="TextureRect" parent="Values/Pop/Pop"]
+[node name="Pop" type="Panel" parent="HUD/Values/Pop"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -772.0
+margin_top = -341.0
+margin_right = 1020.0
+margin_bottom = 171.0
+
+[node name="PopTexture" type="TextureRect" parent="HUD/Values/Pop/Pop"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -337.5
 margin_right = 256.0
-margin_bottom = 682.0
+margin_bottom = 330.5
 texture = ExtResource( 2 )
+expand = true
 stretch_mode = 4
 
-[node name="Pop" type="Label" parent="Values/Pop/Pop"]
-margin_left = 260.0
-margin_top = 136.0
-margin_right = 870.0
-margin_bottom = 545.0
+[node name="Pop" type="Label" parent="HUD/Values/Pop/Pop"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 512.0
+margin_top = -181.0
+margin_right = 1152.0
+margin_bottom = 161.0
 custom_fonts/font = ExtResource( 3 )
 text = "0 / 0"
-align = 1
 valign = 1
 
-[node name="Money" type="MarginContainer" parent="Values"]
-margin_left = 878.0
-margin_right = 1310.0
+[node name="Money" type="Control" parent="HUD/Values"]
+margin_left = 4.0
+margin_right = 4.0
 margin_bottom = 682.0
+size_flags_horizontal = 2
 
-[node name="Money" type="HBoxContainer" parent="Values/Money"]
-margin_right = 432.0
-margin_bottom = 682.0
+[node name="Money" type="Panel" parent="HUD/Values/Money"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 1159.0
+margin_top = -341.0
+margin_right = 2951.0
+margin_bottom = 171.0
 
-[node name="MoneyTexture" type="TextureRect" parent="Values/Money/Money"]
+[node name="MoneyTexture" type="TextureRect" parent="HUD/Values/Money/Money"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -334.0
 margin_right = 256.0
-margin_bottom = 682.0
+margin_bottom = 334.0
 texture = ExtResource( 4 )
+expand = true
 stretch_mode = 4
 
-[node name="Money" type="Label" parent="Values/Money/Money"]
-margin_left = 260.0
-margin_top = 136.0
-margin_right = 432.0
-margin_bottom = 545.0
+[node name="Money" type="Label" parent="HUD/Values/Money/Money"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 399.0
+margin_top = -181.0
+margin_right = 1024.0
+margin_bottom = 161.0
 custom_fonts/font = ExtResource( 3 )
 text = "0"
-align = 1
 valign = 1
 
-[node name="Wood" type="MarginContainer" parent="Values"]
-margin_left = 1314.0
-margin_right = 1746.0
+[node name="Wood" type="Control" parent="HUD/Values"]
+margin_left = 8.0
+margin_right = 8.0
 margin_bottom = 682.0
+size_flags_horizontal = 2
 
-[node name="Wood" type="HBoxContainer" parent="Values/Wood"]
-margin_right = 432.0
-margin_bottom = 682.0
+[node name="Wood" type="Panel" parent="HUD/Values/Wood"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 3102.0
+margin_top = -341.0
+margin_right = 4894.0
+margin_bottom = 171.0
 
-[node name="WoodTexture" type="TextureRect" parent="Values/Wood/Wood"]
+[node name="WoodTexture" type="TextureRect" parent="HUD/Values/Wood/Wood"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -334.0
 margin_right = 256.0
-margin_bottom = 682.0
+margin_bottom = 334.0
 texture = ExtResource( 5 )
+expand = true
 stretch_mode = 4
 
-[node name="Wood" type="Label" parent="Values/Wood/Wood"]
-margin_left = 260.0
-margin_top = 136.0
-margin_right = 432.0
-margin_bottom = 545.0
+[node name="Wood" type="Label" parent="HUD/Values/Wood/Wood"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 470.0
+margin_top = -178.0
+margin_right = 982.0
+margin_bottom = 164.0
 custom_fonts/font = ExtResource( 3 )
-text = "0"
-align = 1
+text = "0 / 0"
 valign = 1
 
-[node name="Stone" type="MarginContainer" parent="Values"]
-margin_left = 1750.0
-margin_right = 2182.0
+[node name="Stone" type="Control" parent="HUD/Values"]
+margin_left = 12.0
+margin_right = 12.0
 margin_bottom = 682.0
+size_flags_horizontal = 2
 
-[node name="Stone" type="HBoxContainer" parent="Values/Stone"]
-margin_right = 432.0
-margin_bottom = 682.0
+[node name="Stone" type="Panel" parent="HUD/Values/Stone"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5104.0
+margin_top = -341.0
+margin_right = 6896.0
+margin_bottom = 164.0
 
-[node name="StoneTexture" type="TextureRect" parent="Values/Stone/Stone"]
+[node name="StoneTexture" type="TextureRect" parent="HUD/Values/Stone/Stone"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -334.0
 margin_right = 256.0
-margin_bottom = 682.0
+margin_bottom = 334.0
 texture = ExtResource( 6 )
+expand = true
 stretch_mode = 4
 
-[node name="Stone" type="Label" parent="Values/Stone/Stone"]
-margin_left = 260.0
-margin_top = 136.0
-margin_right = 432.0
-margin_bottom = 545.0
+[node name="Stone" type="Label" parent="HUD/Values/Stone/Stone"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 512.0
+margin_top = -177.5
+margin_right = 1024.0
+margin_bottom = 164.5
 custom_fonts/font = ExtResource( 3 )
-text = "0"
-align = 1
+text = "0 / 0"
 valign = 1
 
