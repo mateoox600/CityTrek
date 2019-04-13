@@ -1,21 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://img/tiles/TilemapSol.png" type="Texture" id=1]
-[ext_resource path="res://fonts/fonts/main.tres" type="DynamicFont" id=2]
+[ext_resource path="res://img/gui/Population.png" type="Texture" id=2]
+[ext_resource path="res://fonts/fonts/main.tres" type="DynamicFont" id=3]
+[ext_resource path="res://img/gui/Coins.png" type="Texture" id=4]
+[ext_resource path="res://img/gui/Wood.png" type="Texture" id=5]
+[ext_resource path="res://img/gui/Stone.png" type="Texture" id=6]
 
 [node name="HUD" type="Node2D"]
 
 [node name="Values" type="HBoxContainer" parent="."]
-margin_left = 1792.0
-margin_top = 2304.0
-margin_right = 3682.0
-margin_bottom = 2986.0
+margin_left = 1284.0
+margin_top = 256.0
+margin_right = 3174.0
+margin_bottom = 938.0
 
 [node name="Selection" type="MarginContainer" parent="Values"]
 margin_bottom = 682.0
 
 [node name="Selection" type="Sprite" parent="Values/Selection"]
-position = Vector2( -1280, -1792 )
+position = Vector2( -768, 256 )
 scale = Vector2( 4.125, 4.125 )
 texture = ExtResource( 1 )
 vframes = 2
@@ -23,45 +27,101 @@ hframes = 3
 
 [node name="Pop" type="MarginContainer" parent="Values"]
 margin_left = 4.0
-margin_right = 1020.0
+margin_right = 874.0
 margin_bottom = 682.0
 
-[node name="Pop" type="Label" parent="Values/Pop"]
-margin_right = 1016.0
+[node name="Pop" type="HBoxContainer" parent="Values/Pop"]
+margin_right = 870.0
 margin_bottom = 682.0
-custom_fonts/font = ExtResource( 2 )
+
+[node name="PopTexture" type="TextureRect" parent="Values/Pop/Pop"]
+margin_right = 256.0
+margin_bottom = 682.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Pop" type="Label" parent="Values/Pop/Pop"]
+margin_left = 260.0
+margin_top = 136.0
+margin_right = 870.0
+margin_bottom = 545.0
+custom_fonts/font = ExtResource( 3 )
 text = "0 / 0"
+align = 1
+valign = 1
 
 [node name="Money" type="MarginContainer" parent="Values"]
-margin_left = 1024.0
+margin_left = 878.0
 margin_right = 1310.0
 margin_bottom = 682.0
 
-[node name="Money" type="Label" parent="Values/Money"]
-margin_right = 286.0
+[node name="Money" type="HBoxContainer" parent="Values/Money"]
+margin_right = 432.0
 margin_bottom = 682.0
-custom_fonts/font = ExtResource( 2 )
+
+[node name="MoneyTexture" type="TextureRect" parent="Values/Money/Money"]
+margin_right = 256.0
+margin_bottom = 682.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+
+[node name="Money" type="Label" parent="Values/Money/Money"]
+margin_left = 260.0
+margin_top = 136.0
+margin_right = 432.0
+margin_bottom = 545.0
+custom_fonts/font = ExtResource( 3 )
 text = "0"
+align = 1
+valign = 1
 
 [node name="Wood" type="MarginContainer" parent="Values"]
 margin_left = 1314.0
-margin_right = 1600.0
+margin_right = 1746.0
 margin_bottom = 682.0
 
-[node name="Wood" type="Label" parent="Values/Wood"]
-margin_right = 286.0
+[node name="Wood" type="HBoxContainer" parent="Values/Wood"]
+margin_right = 432.0
 margin_bottom = 682.0
-custom_fonts/font = ExtResource( 2 )
+
+[node name="WoodTexture" type="TextureRect" parent="Values/Wood/Wood"]
+margin_right = 256.0
+margin_bottom = 682.0
+texture = ExtResource( 5 )
+stretch_mode = 4
+
+[node name="Wood" type="Label" parent="Values/Wood/Wood"]
+margin_left = 260.0
+margin_top = 136.0
+margin_right = 432.0
+margin_bottom = 545.0
+custom_fonts/font = ExtResource( 3 )
 text = "0"
+align = 1
+valign = 1
 
 [node name="Stone" type="MarginContainer" parent="Values"]
-margin_left = 1604.0
-margin_right = 1890.0
+margin_left = 1750.0
+margin_right = 2182.0
 margin_bottom = 682.0
 
-[node name="Stone" type="Label" parent="Values/Stone"]
-margin_right = 286.0
+[node name="Stone" type="HBoxContainer" parent="Values/Stone"]
+margin_right = 432.0
 margin_bottom = 682.0
-custom_fonts/font = ExtResource( 2 )
+
+[node name="StoneTexture" type="TextureRect" parent="Values/Stone/Stone"]
+margin_right = 256.0
+margin_bottom = 682.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+
+[node name="Stone" type="Label" parent="Values/Stone/Stone"]
+margin_left = 260.0
+margin_top = 136.0
+margin_right = 432.0
+margin_bottom = 545.0
+custom_fonts/font = ExtResource( 3 )
 text = "0"
+align = 1
+valign = 1
 

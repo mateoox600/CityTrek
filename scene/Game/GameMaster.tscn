@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://code/Game/GameMaster/init.gd" type="Script" id=1]
 [ext_resource path="res://img/tiles/TilemapSol.png" type="Texture" id=2]
-[ext_resource path="res://code/Game/Camera.gd" type="Script" id=3]
-[ext_resource path="res://scene/Game/canvas/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/Game/canvas/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilemapSol.png 0"
@@ -69,9 +68,6 @@
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 5120, 3072 )
-
 [node name="GameMaster" type="Node2D"]
 position = Vector2( 5120, 3072 )
 script = ExtResource( 1 )
@@ -89,24 +85,5 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 256, 256 )
 format = 1
 
-[node name="Camera" type="KinematicBody2D" parent="."]
-position = Vector2( 4096, 1024 )
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera"]
-visible = false
-shape = SubResource( 3 )
-disabled = true
-
-[node name="Camera2D" type="Camera2D" parent="Camera"]
-current = true
-zoom = Vector2( 10, 10 )
-limit_left = 0
-limit_top = 0
-drag_margin_h_enabled = false
-drag_margin_v_enabled = false
-smoothing_speed = 8.0
-
-[node name="HUD" parent="Camera" instance=ExtResource( 4 )]
-position = Vector2( -2304, -1024 )
+[node name="Player" parent="." instance=ExtResource( 3 )]
 

@@ -15,7 +15,7 @@ var lumber = 0
 var tile_select = 0
 
 func _ready():
-	$Camera/HUD/Values/Selection/Selection.frame = 3
+	$Player/player/HUD/Values/Selection/Selection.frame = 3
 	maxpop = 5
 	pop = 5
 	money = 15000
@@ -37,10 +37,10 @@ func _physics_process(delta):
 
 func labelUpdate():
 	
-	$Camera/HUD/Values/Pop/Pop.text = "Population : " + String(int(pop)) + " / " + String(int(maxpop))
-	$Camera/HUD/Values/Money/Money.text = "Piece d'or : " + String(int(money))
-	$Camera/HUD/Values/Wood/Wood.text = "Bois : " + String(int(wood)) + " / " + String(int(maxwood))
-	$Camera/HUD/Values/Stone/Stone.text = "Pierre : " + String(int(stone)) + " / " + String(int(maxstone))
+	$Player/player/HUD/Values/Pop/Pop/Pop.text = String(int(pop)) + " / " + String(int(maxpop))
+	$Player/player/HUD/Values/Money/Money/Money.text = String(int(money))
+	$Player/player/HUD/Values/Wood/Wood/Wood.text = String(int(wood)) + " / " + String(int(maxwood))
+	$Player/player/HUD/Values/Stone/Stone/Stone.text = String(int(stone)) + " / " + String(int(maxstone))
 
 func checkClick():
 	var left_click = Input.is_action_just_pressed("left_click")
@@ -96,7 +96,7 @@ func checkSelectTiles():
 	elif tile_select > 2:
 		new_tiles = 2
 	
-	$Camera/HUD/Values/Selection/Selection.frame = new_tiles + 3
+	$Player/player/HUD/Values/Selection/Selection.frame = new_tiles + 3
 	tile_select = new_tiles
 
 func checkResources():

@@ -13,8 +13,7 @@ extents = Vector2( 119.215, 41.7785 )
 [node name="MainMenuMaster" type="Node2D"]
 
 [node name="StartButton" type="Label" parent="."]
-margin_left = -10.0
-margin_right = 289.0
+margin_right = 299.0
 margin_bottom = 162.0
 custom_fonts/font = SubResource( 1 )
 text = "Start"
